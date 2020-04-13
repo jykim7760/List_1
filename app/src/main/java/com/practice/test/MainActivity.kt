@@ -2,6 +2,7 @@ package com.practice.test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.practice.test.adapter.Adapter
 import com.practice.test.source.data
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,6 +30,11 @@ class MainActivity : AppCompatActivity() {
 
         Adapter = Adapter(this, R.layout.app, gameList)
         gameListView.adapter = Adapter
+
+
+        gameListView.setOnItemClickListener { parent, view, position, id -> }
+        Toast.makeText(this, "{position}번 줄 클릭", Toast.LENGTH_SHORT).show()
+
 
     }
 }
